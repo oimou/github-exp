@@ -4,5 +4,12 @@ html
     meta(charset="utf-8")
     title Hello oimou
 
+    block css
+      link(rel='stylesheet', href='css/main.css')
+
+    block js
+      script(src='js/requirejs-config.js')
+      script(src='lib/requirejs/require.js', data-main='js/main-home.js')
+
   body
     h1 Hello oimou
