@@ -9,5 +9,8 @@
     "grunt-contrib-jade": "~0.8.0",
     "github-api": "~0.7.0",
     "prompt": "~0.2.11"
+  },
+  "scripts": {
+    "test": "casperjs test test/browser.coffee"
   }
 }
