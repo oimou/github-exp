@@ -12,6 +12,9 @@ var requirejs = {
     'es6-shim': 'lib/es6-shim/es6-shim'
   },
   shim: {
-    'backbone': ['underscore', 'jquery']
+    'backbone': ['underscore', 'jquery'],
+    'underscore': {
+      exports: '_'
+    }
   }
 };

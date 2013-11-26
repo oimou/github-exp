@@ -3,11 +3,12 @@
  */
 require(
   [
-    'd3',
-    'backbone',
-    'es5-shim',
-    'es6-shim'
+    'view/RepoView'
   ],
-  function(d3, Backbone) {
+  function(RepoView) {
+    var App = window.App = {};
+    App.repoView = new RepoView({
+      el: '#repo'
+    });
   }
 );
