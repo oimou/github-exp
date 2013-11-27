@@ -7,6 +7,8 @@ define(function(require) {
   var RepoModel = require('model/RepoModel');
 
   return Backbone.Collection.extend({
+    model: RepoModel,
+
     initialize: function() {
       this.url = 'data/repos.json';
     },

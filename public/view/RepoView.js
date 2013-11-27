@@ -13,11 +13,12 @@ define(function(require) {
     },
 
     initEvent: function() {
-      this.listenTo(this.collection, 'change', this.render);
+      this.listenTo(this.collection, 'add', this.render);
     },
 
     render: function() {
-      this.$el.html(this.collection.toJSON());
+      var json = this.collection.toJSON();
+      this.$el.text(JSON.stringify(json));
     }
   });
 });
