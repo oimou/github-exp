@@ -1,5 +1,8 @@
 
-c = require('casper').create()
+c = require('casper').create
+  verbose: true
+  logLevel: 'debug'
+
 BASE_URL = 'http://localhsot:9080'
 
 c.start BASE_URL + '/', ->

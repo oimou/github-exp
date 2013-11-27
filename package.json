@@ -8,7 +8,8 @@
     "grunt-contrib-stylus": "~0.10.0",
     "grunt-contrib-jade": "~0.8.0",
     "github-api": "~0.7.0",
-    "prompt": "~0.2.11"
+    "prompt": "~0.2.11",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "scripts": {
     "test": "casperjs test test/browser.coffee"

@@ -39,6 +39,19 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            cwd: "public/",
+            src: ["js/*", "data/*", "view/*", "model/*", "controller/*", "collection/*"],
+            dest: 'dest/'
+          }
+        ]
+      }
+    },
+
     watch: {
       jade: {
         files: ["view/index.jade"],
@@ -48,6 +61,18 @@ module.exports = function(grunt) {
       stylus: {
         files: ["public/css/*.styl", "public/css/*.stylus"],
         tasks: ["stylus:compile"]
+      },
+
+      copy: {
+        files: [
+          "public/js/*",
+          "public/data/*",
+          "public/view/*",
+          "public/model/*",
+          "public/controller/*",
+          "public/collection/*"
+        ],
+        tasks: ["copy:main"]
       },
 
       livereload: {
@@ -63,8 +88,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-stylus");
   grunt.loadNpmTasks("grunt-contrib-jade");
+  grunt.loadNpmTasks("grunt-contrib-copy");
 
-  grunt.registerTask("build", ["jade:compile", "stylus:compile"]);
+  grunt.registerTask("build", ["jade:compile", "stylus:compile", "copy:main"]);
   grunt.registerTask("livereload", ["connect:server", "watch"]);
   grunt.registerTask("default", ["build"]);
 };
