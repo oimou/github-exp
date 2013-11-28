@@ -3,6 +3,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jade: {
       compile: {
+        options: {
+          pretty: true
+        },
+
         files: [
           {
             expand: true,

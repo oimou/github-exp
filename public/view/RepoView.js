@@ -4,10 +4,15 @@
 define(function(require) {
   var Backbone = require('backbone');
   var RepoCollection = require('collection/RepoCollection');
+  var hogan = require('hogan');
 
   return Backbone.View.extend({
     initialize: function(opt) {
-      this.collection = new RepoCollection({});
+      this.collection = new RepoCollection({
+        url: 'data/repos.json'
+      });
+      this.template = hogan.compile($('#template-repo').html());
+
       this.initEvent();
       this.collection.fetch();
     },
@@ -18,7 +23,10 @@ define(function(require) {
 
     render: function() {
       var json = this.collection.toJSON();
-      this.$el.text(JSON.stringify(json));
+      var html = this.template.render({
+        repos: json
+      });
+      this.$el.html(html);
     }
   });
 });

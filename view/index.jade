@@ -14,4 +14,12 @@ html
   body
     h1 Hello oimou
 
+    h2 repos
     #repo
+    script#template-repo(type='text/x-hogan-template')
+      ul
+        | {{#repos}}
+        li
+          h3 {{name}}
+          p {{description}}
+        | {{/repos}}

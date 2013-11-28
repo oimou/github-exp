@@ -9,8 +9,8 @@ define(function(require) {
   return Backbone.Collection.extend({
     model: RepoModel,
 
-    initialize: function() {
-      this.url = 'data/repos.json';
+    initialize: function(opt) {
+      this.url = opt.url;
     },
 
     /**

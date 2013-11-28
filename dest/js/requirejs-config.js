@@ -9,7 +9,8 @@ var requirejs = {
     'underscore': 'lib/underscore/underscore-min',
     'backbone': 'lib/backbone/backbone-min',
     'es5-shim': 'lib/es5-shim/es5-shim',
-    'es6-shim': 'lib/es6-shim/es6-shim'
+    'es6-shim': 'lib/es6-shim/es6-shim',
+    'hogan': 'lib/hogan/web/1.0.0/hogan.min'
   },
   shim: {
     'backbone': {
@@ -21,6 +22,9 @@ var requirejs = {
     },
     'd3': {
       exports: 'd3'
+    },
+    'hogan': {
+      exports: 'Hogan'
     }
   }
 };
